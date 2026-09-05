@@ -1,0 +1,405 @@
+# Instincts generated from https://github.com/JamesWilliam1977/codebuff
+# Generated: 2026-07-01T03:29:17.158Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: codebuff-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 16 commits
+
+---
+id: codebuff-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: codebuff-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: codebuff-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: codebuff-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: codebuff-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: codebuff-workflow-sync-public-snapshot
+trigger: "when doing sync public snapshot"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Workflow Sync Public Snapshot
+
+## Action
+
+Follow the sync-public-snapshot workflow:
+1. Export or sync changes from the private repository.
+2. Update lockfile (bun.lock) to reflect dependency changes.
+3. Optionally update release package.json files if CLI or release changes occurred.
+4. Optionally update or add new source files (e.g., components, types) if relevant features or fixes were made.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: bun.lock, cli/release/package.json, freebuff/cli/release/package.json
+
+---
+id: codebuff-workflow-update-release-package-json
+trigger: "when doing update release package json"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/codebuff
+---
+
+# Codebuff Workflow Update Release Package Json
+
+## Action
+
+Follow the update-release-package-json workflow:
+1. Edit the CLI release package.json file.
+2. Update bun.lock to reflect any dependency changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: cli/release/package.json, freebuff/cli/release/package.json, bun.lock
+
+---
+id: codebuff-instinct-file-naming-camelCase
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: codebuff-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: codebuff-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase convention
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: codebuff-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE convention
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: codebuff-instinct-imports-relative
+trigger: "When importing modules in TypeScript files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Imports Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: codebuff-instinct-exports-named
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Exports Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: codebuff-instinct-error-handling-try-catch
+trigger: "When handling errors in code"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Error Handling Try Catch
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style: try-catch
+
+---
+id: codebuff-instinct-test-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate directory from source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: codebuff-instinct-git-commit-freeform
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Git Commit Freeform
+
+## Action
+
+Use a freeform commit message without a strict prefix
+
+## Evidence
+
+- Pattern in commits.type: freeform
+- No prefixes detected in commit messages
+
+---
+id: codebuff-instinct-git-commit-short
+trigger: "When writing a commit message"
+confidence: 0.75
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Git Commit Short
+
+## Action
+
+Keep the commit message concise, around 40 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 42
+
+---
+id: codebuff-instinct-sync-public-snapshot
+trigger: "When syncing the public repository with the private repository"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Sync Public Snapshot
+
+## Action
+
+Export changes, update bun.lock, optionally update release package.json files and relevant source files
+
+## Evidence
+
+- Workflow: sync-public-snapshot
+- Files: bun.lock, cli/release/package.json, freebuff/cli/release/package.json, cli/src/components/*.tsx, common/src/types/*.ts
+
+---
+id: codebuff-instinct-update-release-package-json
+trigger: "When releasing a new CLI version or updating release metadata"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/codebuff
+---
+
+# Codebuff Instinct Update Release Package Json
+
+## Action
+
+Edit the CLI release package.json file and update bun.lock
+
+## Evidence
+
+- Workflow: update-release-package-json
+- Files: cli/release/package.json, freebuff/cli/release/package.json, bun.lock
+
